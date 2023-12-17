@@ -3,6 +3,8 @@ using namespace std;
 
 int main()
 {
+    setlocale(LC_ALL, "Russian");
+
     int userInputNumber;
 
     // Ввод числа с клавиатуры
