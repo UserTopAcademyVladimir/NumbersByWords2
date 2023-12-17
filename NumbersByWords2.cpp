@@ -1,11 +1,19 @@
-﻿// NumbersByWords2.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
-//
-
-#include <iostream>
+﻿#include <iostream>
+using namespace std;
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    int userInputNumber;
+
+    // Ввод числа с клавиатуры
+    cout << "Введите число от 0 до 99: ";
+    cin >> userInputNumber;
+
+    // Проверка на правильность ввода
+    if (userInputNumber < 0 || userInputNumber > 99) {
+        cout << "Введенное число не соответствует ограничениям." << endl;
+        return 1; // Возвращаем код ошибки
+    }
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
