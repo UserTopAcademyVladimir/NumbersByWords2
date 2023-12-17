@@ -3,10 +3,30 @@ using namespace std;
 
 // Функция для преобразования числа в текст
 string numberToText(int number) {
-    const string units[] = { "", "один", "два", "три", "четыре", "пять", "шесть", "семь", "восемь", "девять" };
+    const string numbers[] = { "", "один", "два", "три", "четыре", "пять", "шесть", "семь", "восемь", "девять" };
     const string teens[] = { "", "одиннадцать", "двенадцать", "тринадцать", "четырнадцать", "пятнадцать", "шестнадцать", "семнадцать", "восемнадцать", "девятнадцать" };
     const string tens[] = { "", "десять", "двадцать", "тридцать", "сорок", "пятьдесят", "шестьдесят", "семьдесят", "восемьдесят", "девяносто" };
 
+    if (number == 0) {
+        return "ноль";
+    }
+    else if (number >= 1 && number <= 9) {
+        return numbers[number];
+    }
+    else if (number >= 11 && number <= 19) {
+        return teens[number - 10];
+    }
+    else {
+        int unitDigit = number % 10;
+        int tensDigit = number / 10;
+
+        if (unitDigit == 0) {
+            return tens[tensDigit];
+        }
+        else {
+            return tens[tensDigit] + " " + numbers[unitDigit];
+        }
+    }
 }
 
 int main()
